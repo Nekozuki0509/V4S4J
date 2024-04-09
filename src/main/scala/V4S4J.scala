@@ -16,7 +16,7 @@ object V4S4J extends App {
     // Load required library
     com.sun.jna.NativeLibrary.addSearchPath("voicevox_core", path)
     com.sun.jna.NativeLibrary.addSearchPath("onnxruntime", path)
-    if (islinux) System.load(Path.of(path).resolve("libonnxruntime.so.1.13.1").toString)
+    if (islinux) System.load(Path.of(path).resolve("libonnxruntime.so.1.13.1").toAbsolutePath.toString)
 
     // vocevox_core will be loaded automatically.
     val core = Core()
