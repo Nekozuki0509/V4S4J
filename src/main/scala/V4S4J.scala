@@ -8,7 +8,7 @@ import java.io.FileOutputStream
 import java.nio.file.Path
 
 object V4S4J extends App {
-  def init(path: String): Unit = {
+  def init(path: String, islinux: Boolean): Unit = {
     // Extract dictionary files from JAR into real file system.
     // Files will go to temporary directory in OS.
     val dictionaryDirectory = Util.extractDictFiles()
@@ -16,7 +16,7 @@ object V4S4J extends App {
     // Load required library
     com.sun.jna.NativeLibrary.addSearchPath("voicevox_core", path)
     com.sun.jna.NativeLibrary.addSearchPath("onnxruntime", path)
-    System.load(Path.of(path).resolve("libonnxruntime.so.1.13.1").toString)
+    if (islinux) System.load(Path.of(path).resolve("libonnxruntime.so.1.13.1").toString)
 
     // vocevox_core will be loaded automatically.
     val core = Core()
@@ -29,7 +29,7 @@ object V4S4J extends App {
     println(initializeOptions)
 
     val initialized = core.voicevox_initialize(initializeOptions)
-    println(s"VoiceVoxInit, voicevoxcore4s! initialized? -> (${initialized})")
+    println(s"VoiceVoxInit, voicevoxcore4s! initialized? -> ($initialized)")
 
   }
 
