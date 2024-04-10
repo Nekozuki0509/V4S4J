@@ -47,7 +47,7 @@ object V4S4J extends App {
 
   }
 
-  def tts(m:String): Boolean = {
+  def tts(m: String): Boolean = {
     if (initialized == Core.VoicevoxResultCode.VOICEVOX_RESULT_OK.code) {
       core.voicevox_load_model(model_zundamon)
 
