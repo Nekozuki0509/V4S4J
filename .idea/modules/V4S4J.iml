@@ -15,7 +15,7 @@
     <orderEntry type="library" name="sbt: com.lihaoyi:geny_2.13:0.6.5:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lihaoyi:os-lib_2.13:0.7.2:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.scala-logging:scala-logging_2.13:3.9.4:jar" level="project" />
-    <orderEntry type="library" name="sbt: dev.capslock:voicevoxcore4s_2.13:0.14.2-ALPHA-2:jar" level="project" />
+    <orderEntry type="library" name="sbt: dev.capslock:voicevoxcore4s_2.13:0.14.1-ALPHA-3:jar" level="project" />
     <orderEntry type="library" name="sbt: net.java.dev.jna:jna-platform:5.12.1:jar" level="project" />
     <orderEntry type="library" name="sbt: net.java.dev.jna:jna:5.12.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.13:jar" level="project" />

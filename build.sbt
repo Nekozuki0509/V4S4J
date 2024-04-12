@@ -11,6 +11,6 @@ lazy val root = (project in file("."))
   )
 
 libraryDependencies ++= Seq(
-  "dev.capslock" % "voicevoxcore4s_2.13" % "0.14.2-ALPHA-2",
+  "dev.capslock" % "voicevoxcore4s_2.13" % "0.14.1-ALPHA-3",
   "org.scala-lang" % "scala-library" % "2.13.13"
 )
