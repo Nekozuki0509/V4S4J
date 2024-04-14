@@ -7,6 +7,7 @@ import dev.capslock.voicevoxcore4s.CoreJ.VoicevoxTtsOptions.ByValue
 import dev.capslock.voicevoxcore4s.{Core, Util}
 
 import java.io.FileOutputStream
+import java.nio.charset.Charset
 import java.nio.file.Path
 
 object V4S4J extends App {
@@ -14,7 +15,6 @@ object V4S4J extends App {
   var core: Core = _
   var initializeOptions: VoicevoxInitializeOptions.ByValue = _
   var initialized: Core.VoicevoxResultCode.Repr = _
-  val model_zundamon = 3
   var bytesLength: IntByReference = _
   var wavBuffer: PointerByReference = _
   var ttsOpts: ByValue = _
@@ -23,6 +23,7 @@ object V4S4J extends App {
   var resultArray: Array[Byte] = _
   var fs: FileOutputStream = _
   def init(path: String, islinux: Boolean): Unit = {
+    System.setProperty("jna.encoding", Charset.defaultCharset().name())
     // Extract dictionary files from JAR into real file system.
     // Files will go to temporary directory in OS.
     dictionaryDirectory = Util.extractDictFiles()
@@ -47,9 +48,9 @@ object V4S4J extends App {
 
   }
 
-  def tts(m: String, path: String): Boolean = {
+  def tts(m: String, path: String, speaker: Int): Boolean = {
     if (initialized == Core.VoicevoxResultCode.VOICEVOX_RESULT_OK.code) {
-      core.voicevox_load_model(model_zundamon)
+      core.voicevox_load_model(speaker)
 
       // Generating voice.
       // First, we should have two pointers: result length, result wav buffer.
@@ -64,7 +65,7 @@ object V4S4J extends App {
       // VOICEVOX will rewrite memory beyond pointer.
       tts = core.voicevox_tts(
         m,
-        model_zundamon,
+        speaker,
         ttsOpts,
         bytesLength, // this will be modified
         wavBuffer // this will be modified
