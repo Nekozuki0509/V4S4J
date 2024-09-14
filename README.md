@@ -7,4 +7,4 @@ Fabdicord : [![Modrinth Version](https://img.shields.io/modrinth/v/JLjSjB3e?logo
 
 # V4S4J(voicevoxcore4s4java)
 ## Description
-[Velodicord](https://github.com/Nekozuki0509/Velodicord)の[voicevoxcore4s](https://github.com/windymelt/voicevoxcore4s)とのコネクタ
+[Velodicord](https://modrinth.com/project/velodicord)の[voicevoxcore4s](https://github.com/windymelt/voicevoxcore4s)とのコネクタ
